@@ -1,0 +1,18 @@
+10:37:26 **** Incremental Build of configuration Debug for project 001_HelloWorld ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F411VETx -DSTM32 -DSTM32F4 -DSTM32F411E_DISCO -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F411VETx -DSTM32 -DSTM32F4 -DSTM32F411E_DISCO -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc -o "001_HelloWorld.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\STM32_Workspace\001_HelloWorld\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="001_HelloWorld.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 001_HelloWorld.elf
+ 
+arm-none-eabi-size  001_HelloWorld.elf 
+arm-none-eabi-objdump -h -S 001_HelloWorld.elf  > "001_HelloWorld.list"
+   text	   data	    bss	    dec	    hex	filename
+    668	      0	   1568	   2236	    8bc	001_HelloWorld.elf
+Finished building: default.size.stdout
+ 
+Finished building: 001_HelloWorld.list
+ 
+
+10:37:35 Build Finished. 0 errors, 0 warnings. (took 8s.890ms)
+
